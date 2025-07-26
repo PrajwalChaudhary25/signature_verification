@@ -8,8 +8,8 @@ from utils import load_and_prep_image, get_last_conv_layer_name
 model = tf.keras.models.load_model("best_model.keras")
 print(model.summary())
 
-forged_image_path = "forged/1.tif"
-genuine_image_path = "genuine/25.tif"
+forged_image_path = "test_dataset/forged/1.tif"
+genuine_image_path = "test_dataset/genuine/25.tif"
 
 img, img_array = load_and_prep_image(forged_image_path)
 prediction = model.predict(img_array)[0][0]
